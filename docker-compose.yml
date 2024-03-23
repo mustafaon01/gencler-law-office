@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build: .  # Build the Dockerfile in the current directory
+    command: python manage.py runserver 0.0.0.0:8000  # Command to run
+    volumes:
+      - .:/usr/src/app  # Mount the project directory inside the container
+    ports:
+      - "8000:8000"  # Expose port 8000
